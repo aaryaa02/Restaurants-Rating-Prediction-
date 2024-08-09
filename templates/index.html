@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zomato Rating Prediction</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Enter the details to get the Zomato Rating Prediction</h1>
+      <form action="/predict" method="post">
+        <label for="online_order">Online Order:</label>
+        <select id="online_order" name="online_order" required style="width:100%; height:40px;">
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+        <br />
+
+        <label for="book_table">Book Table:</label>
+        <select id="book_table" name="book_table" required style="width:100%; height:40px;">
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+        <br />
+
+        <label for="votes">Votes:</label>
+        <input
+          type="number"
+          step="any"
+          id="votes"
+          name="votes"
+          required
+        /><br />
+
+        <label for="location">Location:</label>
+        <select id="location" name="location" required style="width:100%; height:40px;">
+          <!-- Options for location -->
+          <option value="1">Banashankari</option>
+          <option value="2">Basavanagudi</option>
+          <option value="3">Mysore Road</option>
+          <option value="2">Basavanagudi</option>
+             <option value="3">Mysore Road</option>
+             <option value="4">Jayanagar</option>
+             <option value="5">Kumaraswamy Layout</option>
+             <option value="6">Rajarajeshwari Nagar</option>
+             <option value="7">Vijay Nagar</option>
+             <option value="8">Uttarahalli</option>
+             <option value="9">JP Nagar</option>
+             <option value="10">South Bangalore</option>
+             <option value="11">City Market</option>
+             <option value="12">Nagarbhavi</option>
+             <option value="13">Bannerghatta Road</option>
+             <option value="14">BTM</option>
+             <option value="15">Kanakapura Road</option>
+             <option value="16">Bommanahalli</option>
+             <option value="17">CV Raman Nagar</option>
+             <option value="18">Electronic City</option>
+             <option value="19">HSR</option>
+             <option value="20">Marathahalli</option>
+             <option value="21">Sarjapur Road</option>
+             <option value="22">Wilson Garden</option>
+             <option value="23">Shanti Nagar</option>
+             <option value="24">Koramangala 5th Block</option>
+             <option value="25">Koramangala 8th Block</option>
+             <option value="26">Richmond Road</option>
+             <option value="27">Koramangala 7th Block</option>
+             <option value="28">Jalahalli</option>
+             <option value="29">Koramangala 4th Block</option>
+             <option value="30">Bellandur</option>
+             <option value="31">Whitefield</option>
+             <option value="32">East Bangalore</option>
+             <option value="33">Old Airport Road</option>
+             <option value="34">Indiranagar</option>
+             <option value="35">Koramangala 1st Block</option>
+             <option value="36">Frazer Town</option>
+             <option value="37">RT Nagar</option>
+             <option value="38">MG Road</option>
+             <option value="39">Brigade Road</option>
+             <option value="40">Lavelle Road</option>
+             <option value="41">Church Street</option>
+             <option value="42">Ulsoor</option>
+             <option value="43">Residency Road</option>
+             <option value="44">Shivajinagar</option>
+             <option value="45">Infantry Road</option>
+             <option value="46">St. Marks Road</option>
+             <option value="47">Cunningham Road</option>
+             <option value="48">Race Course Road</option>
+             <option value="49">Commercial Street</option>
+             <option value="50">Vasanth Nagar</option>
+             <option value="51">HBR Layout</option>
+             <option value="52">Domlur</option>
+             <option value="53">Ejipura</option>
+             <option value="54">Jeevan Bhima Nagar</option>
+             <option value="55">Old Madras Road</option>
+             <option value="56">Malleshwaram</option>
+             <option value="57">Seshadripuram</option>
+             <option value="58">Kammanahalli</option>
+             <option value="59">Koramangala 6th Block</option>
+             <option value="60">Majestic</option>
+             <option value="61">Langford Town</option>
+             <option value="62">Central Bangalore</option>
+             <option value="63">Sanjay Nagar</option>
+             <option value="64">Brookefield</option>
+             <option value="65">ITPL Main Road, Whitefield</option>
+             <option value="66">Varthur Main Road, Whitefield</option>
+             <option value="67">KR Puram</option>
+             <option value="68">Koramangala 2nd Block</option>
+             <option value="69">Koramangala 3rd Block</option>
+             <option value="70">Koramangala</option>
+             <option value="71">Hosur Road</option>
+             <option value="72">Rajajinagar</option>
+             <option value="73">Banaswadi</option>
+             <option value="74">North Bangalore</option>
+             <option value="75">Nagawara</option>
+             <option value="76">Hennur</option>
+             <option value="77">Kalyan Nagar</option>
+             <option value="78">New BEL Road</option>
+             <option value="79">Jakkur</option>
+             <option value="80">Rammurthy Nagar</option>
+             <option value="81">Thippasandra</option>
+             <option value="82">Kaggadasapura</option>
+             <option value="83">Hebbal</option>
+             <option value="84">Kengeri</option>
+             <option value="85">Sankey Road</option>
+             <option value="86">Sadashiv Nagar</option>
+             <option value="87">Basaveshwara Nagar</option>
+             <option value="88">Yeshwantpur</option>
+             <option value="89">West Bangalore</option>
+             <option value="90">Magadi Road</option>
+             <option value="91">Yelahanka</option>
+             <option value="92">Sahakara Nagar</option>
+             <option value="93">Peenya</option>
+        </select>
+        <br />
+
+        <label for="rest_type">Restaurant Type:</label>
+        <input type="number" id="rest_type" name="rest_type" required /><br />
+
+        <label for="review_sentimen">Review Sentiment:</label>
+        <select id="review_sentimen" name="review_sentimen" required style="width:100%; height:40px;">
+          <option value="4">Better</option>
+          <option value="3">Good</option>
+          <option value="2">Average</option>
+          <option value="1">Bad</option>
+          <option value="0">Unknown</option>
+        </select>
+        <br />
+
+        <label for="cuisines">Cuisines:</label>
+        <input type="number" id="cuisines" name="cuisines" required /><br />
+
+        <label for="costfor2">Cost for 2:</label>
+        <input
+          type="number"
+          step="any"
+          id="costfor2"
+          name="costfor2"
+          required
+        /><br />
+
+        <label for="type">Type:</label>
+        <input type="number" id="type" name="type" required /><br />
+
+        <label for="city">City:</label>
+        <select id="city" name="city" required style="width:100%; height:40px;">
+          <!-- Options for city -->
+          <option value="1">Banashankari</option>
+          <option value="2">Bannerghatta Road</option>
+          <option value="3">Basavanagudi</option>
+         <option value="2">Bannerghatta Road</option>
+       <option value="3">Basavanagudi</option>
+       <option value="4">Bellandur</option>
+       <option value="5">Brigade Road</option>
+       <option value="6">Brookefield</option>
+       <option value="7">BTM</option>
+       <option value="8">Church Street</option>
+       <option value="9">Electronic City</option>
+       <option value="10">Frazer Town</option>
+       <option value="11">HSR</option>
+       <option value="12">Indiranagar</option>
+       <option value="13">Jayanagar</option>
+       <option value="14">JP Nagar</option>
+       <option value="15">Kalyan Nagar</option>
+       <option value="16">Kammanahalli</option>
+       <option value="17">Koramangala 4th Block</option>
+       <option value="18">Koramangala 5th Block</option>
+       <option value="19">Koramangala 6th Block</option>
+       <option value="20">Koramangala 7th Block</option>
+       <option value="21">Lavelle Road</option>
+       <option value="22">Malleshwaram</option>
+       <option value="23">Marathahalli</option>
+       <option value="24">MG Road</option>
+       <option value="25">New BEL Road</option>
+       <option value="26">Old Airport Road</option>
+       <option value="27">Rajajinagar</option>
+       <option value="28">Residency Road</option>
+       <option value="29">Sarjapur Road</option>
+       <option value="30">Whitefield</option>
+        </select>
+        <br />
+
+        <input type="submit" class="btn btn-primary" value="Predict" />
+      </form>
+
+      {% if prediction_text %}
+      <h2>{{ prediction_text }}</h2>
+      {% endif %}
+
+      <!-- Adding the Tableau Visualization button -->
+      <a href="https://public.tableau.com/app/profile/arya.dixit/viz/ZomatoBangaloreRestaurantsAnalysis/Story1?publish=yes"
+         target="_blank">
+        <button class="btn btn-secondary" style="margin-top: 20px;">Tableau Visualization</button>
+      </a>
+    </div>
+  </body>
+</html>
+
